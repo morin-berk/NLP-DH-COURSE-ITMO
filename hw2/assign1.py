@@ -155,10 +155,10 @@ def test_logistic_regression(test_x, test_y, freqs, theta):
     y_hat_array = np.asarray(y_hat)
     test_y_array = np.squeeze(test_y)
 
-    if y_hat_array.all() == test_y_array.all():
+    if y_hat_array == test_y_array:
         accuracy = sum(
-            sum(el for el in test_y),
-            sum(el for el in y_hat_array))/len(y_hat_array)
+            sum(y_hat_array),
+            sum(test_y)/len(y_hat_array))
         return accuracy
 
 # ---- Error Analysis ----
